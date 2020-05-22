@@ -41,10 +41,15 @@
       <input type="text" name="nombre_usuario" id="nombre_usuario"></td>
     </tr>
     <tr>
-      <td>Contraseña:</td>
+      <td>Edad:</td>
       <td><label for="edad_usuario"></label>
-      <input type="text" name="contra" id="contra"></td>
+      <input type="text" name="edad_usuario" id="edad_usuario"></td>
     </tr>
+    <!-- <tr>
+      <td>Contraseña:</td>
+      <td><label for="contra"></label>
+      <input type="text" name="contra" id="contra"></td>
+    </tr> -->
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
