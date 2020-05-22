@@ -49,7 +49,7 @@
     Si no encuentra el archivo detiene el programa y salta error.
     Include sigue corriendo el programa pero tb salta el error.
     */
-    
+
     ?>
 </body>
 </html>
