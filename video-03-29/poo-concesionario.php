@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+
     <?php
         include("concesionario.php");
+
+        Comprar_vehiculo::descuento_gobierno();
 
         // Cliente 1
         $compra_Antonio = new Comprar_vehiculo("compacto");

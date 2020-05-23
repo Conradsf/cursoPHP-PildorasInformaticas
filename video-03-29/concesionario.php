@@ -3,9 +3,7 @@
     class Comprar_vehiculo{
 
         private $precio_base;
-
-
-        private static $ayuda=4500;
+        private static $ayuda=0;
 
         function __construct($gama){
 
@@ -19,6 +17,18 @@
                 $this->precio_base=30000;
             }
         } //Fin constructor
+        
+        # esta funcion es statica. Permite acceder a ella a través de la clase.
+        # segun la fecha que este definidido en el if modificará la variable estatica
+        # de la clase en este caso de 0 a 4500.
+        # recordemos que al ser private static NO se puede modificar desde fuera.
+
+        static function descuento_gobierno() {
+            if(date("m-d-y")>"01-01-20"){
+                self::$ayuda=4500;
+            }
+
+        } //Fin decscuento gobierno
 
         function climatizador(){
             $this->precio_base+=2000;
