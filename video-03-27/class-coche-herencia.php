@@ -1,27 +1,33 @@
 <?php
-    /**
-     * Que es POO
-     * Clases
-     * Instanciar clases
-    */
 
-    class Coche{
-        
-        private $ruedas;
+class Coche{
+        #si el atrivuto solo se puede acceder desde la classe (private)
+        # debemos crear uan funcion que pueda leer este atributo desde fuera.
+        # getters-setters:
+
+        protected $ruedas;
         
         var $color;
 
-        var $motor;
+        protected $motor;
 
-        # CONSTRUCTOR indica el estado inicial de los ATRIBUTOS de los objetos:
-        # ANTES: tenia que tener el mismo nombre que la class: Coche(){}
-        # AHORA: se indican todos asi: __construct(){}
         
         function __construct(){
-            #this-> se refiere a su propia clase, es lo mismo que decir Coche()
             $this->ruedas=4;
             $this->color="gris";
             $this->motor=1600;
+        }
+
+        #la functión get_ruedas() permite devolver el atributo de la clase ruedas 
+        #cuando se llame fuera de la clase.
+        #RECORDAR: GET SOLO PERMITE LEER EL ATRIBUTO DESDE FUERA. NO SE PUEDE MODIFICAR.
+
+        function get_ruedas(){
+            return $this->ruedas;
+        }
+
+        function get_motor(){
+            return $this->motor;
         }
 
         function arrancar(){
@@ -36,13 +42,23 @@
             echo "Estoy frenando <br>";
         }
 
-        //esta funcion debe recibir el nombre de un color. Es decir, un parametro
-        function establecer_color($color_coche,$nombre_coche){ 
-            //asignamos el valor de color_coche a la propiedad (atributo) de clase coche.
+        #ESTE ES UN SETTER CON UN NOMBRE NO CONVENCIONAL:
+        // function establecer_color($color_coche,$nombre_coche){ 
+            
+        //     $this->color=$color_coche;
+        //     echo "El color del coche " . $nombre_coche . " es: " . $this->color . "<br>";
+        // }
+        
+        #Ahora ya seria un setter escrito de forma convencional:
+
+        function set_color($color_coche,$nombre_coche){ 
+            
             $this->color=$color_coche;
             echo "El color del coche " . $nombre_coche . " es: " . $this->color . "<br>";
         }
-    }
+    }   
+
+    
 
     //----------------------------------------------------------------------------------
    
